@@ -3,8 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import BootstrapVue from 'bootstrap-vue'
 
-import VueMaterial from 'vue-material'
+Vue.use(BootstrapVue);
+
 import './assets/theme.scss'
 
 Vue.use(VueMaterial)

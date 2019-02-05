@@ -84,6 +84,9 @@
 </template>
 
 <script>
+import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue'
+Vue.use
 export default {
   name: 'HelloWorld',
   data () {
