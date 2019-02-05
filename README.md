@@ -1,12 +1,18 @@
-# tmph-frontend
 
-> frontend again
+
+# frontend
+
+> a Vue frontend 
+
+## Purpose 
+
+This will be used for authenticated (logged-in) users
 
 ## Build Setup
 
 ``` bash
 # install dependencies
-npm install
+npm install # OR you can use: yarn install
 
 # serve with hot reload at localhost:8080
 npm run dev
