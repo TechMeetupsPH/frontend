@@ -13,6 +13,13 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "bunyan": "^1.8.12",
+    "restify": "^7.7.0",
+    "restify-bunyan-logger": "^2.0.7",
+    "restify-errors": "^6.1.1",
+    "restify-plugins": "^1.6.0",
+    "siamese": "^2.0.11",
     "vue": "^2.5.2",
     "vue-material": "latest",
     "vue-router": "^3.0.1"
