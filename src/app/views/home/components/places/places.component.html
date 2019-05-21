@@ -1,0 +1,32 @@
+<ul class="list-group topics">
+  <li class="list-group-item">
+    Example of using an Attribute directive (input)
+  </li>
+  <li class="list-group-item">Using of Google places service</li>
+</ul>
+<div class="places">
+  <div class="logo">
+    <img src="assets/google-maps.png" alt="image" />
+  </div>
+  <div class="input-container">
+    <input
+      type="text"
+      class="google-place-input"
+      google-place
+      (onSelect)="setAddress($event)"
+      placeholder="Type to search.."
+    />
+    <!-- Displaying the contents of the address object received from our event emitter -->
+    <ul style="list-style-type: none;">
+      <li *ngFor="let key of addrKeys">
+        <div *ngIf="key != 'coordinates'">
+          <span style="font-weight: bold">{{ key }}</span
+          >: <span>{{ addr[key] }}</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<agm-map [zoom]="13" class="preview" [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

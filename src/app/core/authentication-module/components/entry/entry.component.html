@@ -1,0 +1,121 @@
+<div class="wrapper">
+  <!-- Toggle SignIn and SignUp modes -->
+  <ng-container
+    *ngTemplateOutlet="isLoginMode ? loginTemplate : signUpTemplate"
+  >
+  </ng-container>
+</div>
+
+<!-- Sign In Template -->
+<ng-template #loginTemplate>
+  <form
+    (ngSubmit)="logIn(signUpForm.value)"
+    [formGroup]="signUpForm"
+    [ngClass]="isAuthenticated ? 'form-signin-success' : 'form-signin'"
+  >
+    <div class="alert alert-info">
+      Sign in or
+      <span class="underLine" (click)="toggleMode()">create an account.</span>
+    </div>
+    <h2 class="form-signin-heading">User Authentication</h2>
+    <small class="text-danger"> {{ errMsg }} </small>
+    <!-- email -->
+    <input
+      type="text"
+      class="form-control"
+      formControlName="email"
+      autocomplete="email"
+      [placeholder]="'Email'"
+    />
+    <small
+      [hidden]="
+        signUpForm.controls.email.valid || signUpForm.controls.email.untouched
+      "
+      class="text-danger"
+    >
+      Invalid email address
+    </small>
+    <!-- Password -->
+    <input
+      type="password"
+      class="form-control"
+      formControlName="password"
+      autocomplete="current-password"
+      [placeholder]="'Password'"
+    />
+
+    <label class="checkbox">
+      <input type="checkbox" value="remember-me" formControlName="remember" />
+      Remember me
+    </label>
+    <button
+      class="btn btn-lg btn-primary btn-block"
+      type="submit"
+      [disabled]="signUpForm.invalid || isLoading"
+    >
+      <span>SIGN IN</span>
+    </button>
+  </form>
+</ng-template>
+<!-- end of Sign In -->
+
+<!-- Signup Template -->
+<ng-template #signUpTemplate>
+  <form
+    (ngSubmit)="signUp(signUpForm.value)"
+    [formGroup]="signUpForm"
+    [ngClass]="isAuthenticated ? 'form-signin-success' : 'form-signin'"
+  >
+    <div class="alert alert-info">
+      Already have an account?
+      <span class="underLine" (click)="toggleMode()">Sign in</span>
+    </div>
+    <!-- Email -->
+    <h2 class="form-signin-heading">Create your Account</h2>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="email"
+      autocomplete="email"
+      [placeholder]="'Email'"
+    />
+    <small class="text-danger"> {{ errMsg }} </small>
+    <small
+      [hidden]="
+        signUpForm.controls.email.valid || signUpForm.controls.email.untouched
+      "
+      class="text-danger"
+    >
+      Invalid email address
+    </small>
+    <!-- Password -->
+    <input
+      type="password"
+      class="form-control"
+      formControlName="password"
+      autocomplete="current-password"
+      [placeholder]="'Password'"
+    />
+    <small
+      [hidden]="
+        signUpForm.controls.password.valid ||
+        signUpForm.controls.password.untouched
+      "
+      class="text-danger"
+    >
+      Password should contain atleast 6 characters !
+    </small>
+    <button
+      class="btn btn-lg btn-primary btn-block signUp"
+      type="submit"
+      [disabled]="signUpForm.invalid || isLoading"
+    >
+      <span>SIGN UP</span>
+    </button>
+
+    <div class="alert alert-success sucess" *ngIf="successMsg">
+      <strong>Success!</strong> {{ successMsg }}
+    </div>
+  </form>
+</ng-template>
+<!-- end of SignUp Template -->

@@ -1,0 +1,94 @@
+/* navbar */
+
+.navbar-default {
+  background-color: #ffffff;
+  border-color: #b3c2bf;
+  /* Title */
+  .navbar-brand {
+    color: #2aa596;
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+      color: #3da699;
+    }
+  }
+}
+.navbar-default .navbar-nav > li > a {
+  color: #2aa596;
+  cursor: pointer;
+}
+
+//TODO
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #3da699;
+  background-color: #63a79f17;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #49c5b74f;
+  background-color: #e7e7e7;
+}
+/* Caret */
+.navbar-default .navbar-nav > .dropdown > a .caret {
+  border-top-color: #49c5b74f;
+  border-bottom-color: #49c5b74f;
+}
+.navbar-default .navbar-nav > .dropdown > a:hover .caret,
+.navbar-default .navbar-nav > .dropdown > a:focus .caret {
+  border-top-color: #3da699;
+  border-bottom-color: #3da699;
+}
+.navbar-default .navbar-nav > .open > a .caret,
+.navbar-default .navbar-nav > .open > a:hover .caret,
+.navbar-default .navbar-nav > .open > a:focus .caret {
+  border-top-color: #3da699;
+  border-bottom-color: #3da699;
+}
+/* Mobile version */
+.navbar-default .navbar-toggle {
+  border-color: #ddd;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ddd;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ccc;
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: red;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #333;
+  }
+}
+.a {
+  color: red;
+}
+
+.mat-icon {
+  margin-left: 5px;
+}
+
+.entry {
+  color: black;
+  font-size: medium;
+}
+
+.navigation {
+  margin-right: 10px;
+  color: #007bff;
+}
+.expired-token {
+  color: red;
+  margin-right: 10px;
+  font-style: oblique;
+  cursor: pointer;
+}
+.info {
+  margin-right: 40px;
+}
