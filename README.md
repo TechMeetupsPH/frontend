@@ -1,4 +1,13 @@
-The idea is to give a [SPA](https://en.wikipedia.org/wiki/Single-page_application) -like experience 
+# Techmeetups.PH Frontend Website
+
+This is the new frontend of the website. We'll consume the backend using JWT.  The idea is to give a [SPA](https://en.wikipedia.org/wiki/Single-page_application) -like experience.
+
+## How to Run
+
+Run `ng serve` for a dev server. Navigate to [localhost:4200](http://localhost:4200/). The app will automatically reload if you change any of the source files.
+
+This is built  on top of [Angular7-starter-kit](https://github.com/stasrdv/Angular7--starter-kit)
+
 
 The frontpage and login page call the backend through a simple token API. 
 
