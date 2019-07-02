@@ -1,0 +1,22 @@
+.places {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-place-input {
+  width: 100%;
+  min-width: 280px;
+  height: 2rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin-bottom: 25px;
+}
+
+.preview {
+  height: 300px;
+}
+.topics {
+  margin: 20px;
+}

@@ -9,6 +9,9 @@ import { DesignPatternsComponent } from "./components/design-patterns/design-pat
 import { FormsModule } from "@angular/forms";
 import { MatIconModule } from "@angular/material";
 
+import { AgmCoreModule, GoogleMapsAPIWrapper } from "@agm/core";
+import { PlacesComponent } from "./components/places/places.component";
+import { GooglePlacesDirective } from "./components/places/directives/google-places.directive";
 import { MatDialogModule } from "@angular/material/dialog";
 
 const moduleComponets = [

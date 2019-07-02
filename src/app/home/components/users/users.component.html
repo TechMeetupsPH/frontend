@@ -1,0 +1,27 @@
+<ul class="list-group topics">
+  <li class="list-group-item">
+    Async Pipe -Unwraps a value from an asynchronous primitive.
+  </li>
+  <li class="list-group-item">
+    @Cacheable() - Observable cache decorator you can use to decorate class
+    methods which return streams and cache their return values.
+  </li>
+</ul>
+<div class="users">
+  <div class="user" *ngFor="let user of (users$ | async)">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Name - {{ user.name }}</h5>
+        <p class="card-text">UserName - {{ user.username }}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Cirty - {{ user.address.city }}</li>
+        <li class="list-group-item">Streer - {{ user.address.street }}</li>
+        <li class="list-group-item">ZipCode - {{ user.address.zipcode }}</li>
+      </ul>
+      <div class="card-body">
+        <a class="card-link">Phone {{ user.phone }}</a>
+      </div>
+    </div>
+  </div>
+</div>

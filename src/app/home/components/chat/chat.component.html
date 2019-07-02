@@ -1,0 +1,101 @@
+<ul class="list-group topics">
+  <li class="list-group-item">Socket.IO</li>
+  <li class="list-group-item">Howler.js Audio library for the modern web</li>
+</ul>
+
+<div class="container">
+  <div class="people-list" id="people-list">
+    <div
+      class="alert alert-success"
+      role="alert"
+      *ngIf="isTyping && typingState.userID != userID"
+    >
+      {{ typingState.userName }} is typing...
+    </div>
+    <ul class="list" *ngFor="let user of onlineUsers">
+      <ng-container
+        *ngTemplateOutlet="
+          onlineUsers.length == 1 ? offlineTemplate : onlineTemplate
+        "
+      >
+      </ng-container>
+
+      <ng-template #offlineTemplate>
+        <li class="clearfix">
+          <img
+            class="onlineUser"
+            src="assets/Status-tray-offline-icon.png"
+            alt="avatar"
+          />
+          <div class="about"><div class="name">No online users</div></div>
+        </li>
+      </ng-template>
+
+      <ng-template #onlineTemplate>
+        <li class="clearfix" *ngIf="user.userID != userID">
+          <img
+            class="onlineUser"
+            src="assets/Status-tray-online-icon.png"
+            alt="avatar"
+          />
+          <div class="about">
+            <div class="name">{{ user.userName }}</div>
+            <div class="status"><i class="fa fa-circle online"></i> online</div>
+          </div>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+  <div class="chat">
+    <div class="chat-history">
+      <ul *ngFor="let item of messages">
+        <li [ngClass]="userID == item.userID ? 'clearfix' : ''">
+          <div
+            [ngClass]="
+              userName == item.userID
+                ? 'message-data align-right'
+                : 'message-data'
+            "
+          >
+            &nbsp; &nbsp;
+            <span
+              [ngClass]="
+                userName != item.userID
+                  ? 'message-data-name'
+                  : 'message-data-name-other'
+              "
+              >{{ item.userName }}</span
+            >
+            <i class="fa fa-circle me"></i>
+          </div>
+          <div
+            class=""
+            [ngClass]="
+              userID == item.userID
+                ? 'message my-message'
+                : 'message other-message'
+            "
+          >
+            {{ item.text }}
+            <span class="message-data-time">{{
+              item.currentTime | date: "short"
+            }}</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="chat-message clearfix">
+      <textarea
+        type="text"
+        [(ngModel)]="message"
+        (ngModelChange)="userIsTyping($event)"
+        rows="3"
+      ></textarea>
+
+      <i class="fa fa-file-o"></i> &nbsp;&nbsp;&nbsp;
+      <i class="fa fa-file-image-o"></i>
+
+      <button (click)="sendMessage()">Send</button>
+    </div>
+  </div>
+</div>

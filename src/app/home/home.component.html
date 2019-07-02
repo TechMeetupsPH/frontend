@@ -1,0 +1,19 @@
+<div class="container-fluid welcome">
+  <h2>Angular 7 Boilerplate</h2>
+  <p>
+    Web project starter kit including modern tools and workflow based on
+    angular-cli, best practices from the community, a scalable base template and
+    a good learning base.
+  </p>
+</div>
+
+<!-- Start Feature Area -->
+<div class="featured-area">
+  <div class="single-feature" *ngFor="let post of (posts$ | async)">
+    <div class="desc text-center">
+      <h6 class="title">{{ post.title }}</h6>
+      <div class="icon"><mat-icon svgIcon="{{ post.icon }}"></mat-icon></div>
+      <p>{{ post.body }}</p>
+    </div>
+  </div>
+</div>
