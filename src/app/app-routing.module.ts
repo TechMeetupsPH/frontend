@@ -1,23 +1,18 @@
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './auth.guard';
 import { ModuleWithProviders } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: "home",
-    loadChildren: "../app/views/home/home.module#HomeModule"
+    path: "/",
+    pathMatch: "full",
+    component: Home
   },
-  {
-    path: "",
-    redirectTo: "/home",
-    pathMatch: "full"
-  },
-  { path: "**", redirectTo: "/home", pathMatch: "full" },
-  {
-    // LazyLoading
-    path: "entry",
-    loadChildren:
-      "../app/core/authentication-module/entry.module#AuthenticationModule"
-  }
+  { path: 'login',
+    component:
+     LoginComponent},
+
 ];
 
 export const AppRoutingModule: ModuleWithProviders = RouterModule.forRoot(
